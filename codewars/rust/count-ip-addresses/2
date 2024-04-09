@@ -1,0 +1,40 @@
+use std::collections::HashMap;
+
+fn ips_between(start: &str, end: &str) -> u32 {
+    // SUBNET               No. POSSIBLE ADDRESSES
+    // ----------------- | ----------------------- |
+    // 255.255.255.255  ->  1
+    // 255.255.255.0    ->  256
+    // 255.255.0.0      ->  65,536
+    // 255.0.0.0        ->  16,777,216
+    // 0.0.0.0          ->  4,294,967,294
+
+    // 0 -> 255 => (256 * (positions with a 0))
+
+    let mut net_map: HashMap<_, _> = HashMap::<u32, u32>::new();
+    <HashMap<u32, u32> as Extend<A>>::extend::<T>(&mut net_map, start
+            .split(".")
+            .map(|n| n.parse::<u32>().unwrap())
+            .collect();
+    );
+    // let start_vec = start
+    //     .split(".")
+    //     .filter(|n| !n.is_empty())
+    //     .map(|n| n.parse::<u32>().unwrap())
+    //     .collect::<Vec<_>>();
+    // let end_vec = end
+    //     .split(".")
+    //     .filter(|n| !n.is_empty())
+    //     .map(|n| n.parse::<u32>().unwrap())
+    //     .collect::<Vec<_>>();
+    println!("{:#?}", net_map);
+    // println!("{:?}\n{:?}", start_vec, end_vec);
+
+    // net_map.extend(start_vec.map(|s|));
+
+    return 0;
+}
+
+fn main() {
+    ips_between("20.0.0.10", "20.0.1.0");
+}

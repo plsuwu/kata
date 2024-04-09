@@ -1,0 +1,23 @@
+fn roman_as_num(roman: &str) -> u64 {
+    let numerals = vec!["I", "V", "X", "L", "C", "D", "M"];
+    let split_roman = roman.rsplit("").filter(|&c| !c.is_empty()).collect::<Vec<&str>>().to_vec();
+
+    println!("{:?}", split_roman);
+
+    for (i, n) in split_roman.iter().enumerate() {
+        println!("{} -> {}", i, n);
+        if i < roman.len() - 1 {
+            println!("{}: {} + {}", i, n, split_roman[i+1]);
+        }
+    }
+
+    return 2;
+
+    // let conv = roman.split("").for_each(|c| match c {
+    //
+    // });
+}
+
+fn main() {
+    roman_as_num("MXC");
+}

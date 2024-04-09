@@ -1,0 +1,10 @@
+# possibly other stuff?? idk i cant remember whats in there
+
+**/debug/
+**/target/
+**/*.rs.bk
+**/*.pdb
+
+**/node_modules/
+**/package.lock
+
